@@ -36,7 +36,7 @@ class EnemyBase:
         self.attack_timer = 0
         self.has_hit = False
         self.dead = False
-        self.debug = True
+        self.debug = False
         self.font = pygame.font.Font("assets/fonts/monogram.ttf", 60)
         self.attack_cooldown = 0.5
 

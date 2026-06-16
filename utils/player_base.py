@@ -13,7 +13,7 @@ class PlayerBase:
         self.hurtbox.center = self.rect.center
         self.has_hit = False
         self.dead = False
-        self.debug = True
+        self.debug = False
         self.speed = 0
         self.font = pygame.font.Font("assets/fonts/monogram.ttf", 60)
         self.attack_clicked = False
