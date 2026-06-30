@@ -5,9 +5,9 @@ from utils.enemy_base import EnemyBase
 class Enemy(EnemyBase):
     def __init__(self, x, y, player):
         self.animations = {
-            "idle": ("assets/imgs/player_idle.png", 2, 0.1),
-            "walk": ("assets/imgs/player_walk.png", 2, 0.1),
-            "attack": ("assets/imgs/player_attack.png", 2, 0.05, False),
+            "idle": ("assets/imgs/enemy_idle.png", 2, 0.1),
+            "walk": ("assets/imgs/enemy_walk.png", 2, 0.1),
+            "attack": ("assets/imgs/enemy_attack.png", 2, 0.05, False),
         }
 
         self.stats = {
