@@ -10,9 +10,7 @@ class GameBase:
     def initialize(self):
         pygame.init()
         pygame.display.set_caption(self.screen_title)
-        self.screen = pygame.display.set_mode(
-            (self.screen_width, self.screen_height), display=1
-        )
+        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.clock = pygame.time.Clock()
 
         self.camera = Camera(self.screen_width, self.screen_height)
