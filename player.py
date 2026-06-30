@@ -9,8 +9,9 @@ class Player(PlayerBase):
             "idle": SpriteSheet("assets/imgs/player_idle.png", 2, 0.1),
             "walk": SpriteSheet("assets/imgs/player_walk.png", 2, 0.1),
             "run": SpriteSheet("assets/imgs/player_run.png", 2, 0.07),
-            "attack": SpriteSheet("assets/imgs/player_attack.png", 2, 0.5, False),
+            "attack": SpriteSheet("assets/imgs/player_attack.png", 2, 0.05, False),
         }
+
         self.stats = {
             "max_hp": 100,
             "hp": 100,
@@ -22,9 +23,12 @@ class Player(PlayerBase):
         self.initialize(x, y)
 
     def handle_input(self, dt):
-        pass
+        keys = pygame.key.get_pressed()
+        direction = pygame.Vector2(keys[pygame.K_d] - keys[pygame.K_a], 0)
+        self.move(keys, direction, dt)
 
     def update(self, dt):
+        self.handle_input(dt)
         self.update_sprites(dt)
 
     def draw(self, screen, camera):

@@ -1,16 +1,29 @@
 import pygame
+from utils.enemy_base import EnemyBase
 
-class Enemy:
+
+class Enemy(EnemyBase):
     def __init__(self, x, y, player):
+        self.animations = {
+            "idle": ("assets/imgs/player_idle.png", 2, 0.1),
+            "walk": ("assets/imgs/player_walk.png", 2, 0.1),
+            "attack": ("assets/imgs/player_attack.png", 2, 0.05, False),
+        }
+
         self.stats = {
             "max_hp": 100,
             "hp": 100,
             "speed": 200,
-            "damage": 10
+            "damage": 0,
         }
 
+        self.initialize(x, y, player)
+
     def update(self, dt):
-        pass
+        self.get_target_x()
+        if not self.attack(dt):
+            self.move(dt)
+        self.update_sprites(dt)
 
     def draw(self, screen, camera):
-        pass
+        self.draw_sprites(screen, camera)
