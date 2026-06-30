@@ -26,7 +26,6 @@ class Game(GameBase):
         if self.game_finish:
             return
         self.player.update(self.dt)
-        self.camera.follow(self.player.rect)
 
     def draw(self):
         self.background.draw()
